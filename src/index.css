@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fff !important;
+}
+.scrollVertical {
+  background-color: #fbf5fb;
+  max-height: 300px;
+  overflow-y: auto;
+}
+input[type="radio"] {
+  accent-color: #9b5de5;
+  width: 20px;
+  height: 20px;
+}
