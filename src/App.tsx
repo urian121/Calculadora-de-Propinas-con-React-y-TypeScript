@@ -5,6 +5,8 @@ import TipPercentageForm from "./components/TipPercentageForm";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 
+import { ToastContainer } from "react-toastify";
+
 function App() {
   const { order, tip, setTip, addItem, removeItem, placeOrder } = useOrder();
 
@@ -15,6 +17,7 @@ function App() {
           Calculadora de Propinas y Consumo
         </h1>
       </header>
+      <ToastContainer />
 
       <main className=" max-w-7xl mx-auto py-20 grid md:grid-cols-2">
         <div className="p-5">

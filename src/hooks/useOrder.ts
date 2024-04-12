@@ -1,6 +1,10 @@
 import { useState } from "react"
 import type { MenuItem, OrderItem } from "../types"
 
+// Agregando alertas
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function useOrder() {
     const [order, setOrder] = useState<OrderItem[]>([])
     const [tip, setTip] = useState(0)
@@ -13,6 +17,7 @@ export default function useOrder() {
                 orderItem
             )
             setOrder(updatedOrder)
+            toast.success("Pedido agregado");
         } else {
             const newItem  = {...item, quantity: 1}
             setOrder([...order, newItem])
@@ -20,7 +25,8 @@ export default function useOrder() {
     }
 
     const removeItem = (id: MenuItem['id']) => {
-        setOrder(order.filter( item => item.id !== id ))
+        setOrder(order.filter(item => item.id !== id))
+        toast.error("Pedido eliminado");
     }
 
     const placeOrder = () => {
