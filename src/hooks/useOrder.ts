@@ -17,11 +17,11 @@ export default function useOrder() {
                 orderItem
             )
             setOrder(updatedOrder)
-            toast.success("Pedido agregado");
         } else {
             const newItem  = {...item, quantity: 1}
             setOrder([...order, newItem])
         }
+        toast.success("Pedido agregado");
     }
 
     const removeItem = (id: MenuItem['id']) => {
